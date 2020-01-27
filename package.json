@@ -1,6 +1,6 @@
 {
 	"name": "funkytime-stream",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Stream data updates from funkytime.tv.",
 	"repository": "https://github.com/Richienb/funkytime-stream.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
