@@ -1,14 +1,28 @@
+import EventEmitter from "events"
+
+interface Options {
+	/**
+	 * Interval in milliseconds before checking for new topics.
+	 * @default 5000
+	*/
+	interval?: number
+}
+
+interface StoppableEmitter extends EventEmitter {
+	stop(): void
+}
+
 /**
- * My awesome module.
- * @param input Lorem ipsum.
- * @param postfix Lorem ipsum.
+ * Stream data updates from funkytime.tv.
+ * @param options Options.
  * @example
  * ```
- * const theModule = require("the-module");
- * theModule("unicorns");
- * //=> 'unicorns & rainbows'
+ * const funkytimeStream = require("funkytime-stream");
+ *
+ * funkytimeStream().on("newtopic", ({ title, url }) => console.log(title, url))
+ * //=> KITi Assistant Release https://funkytime.tv/forums/topic/kiti-assistant-release/
  * ```
 */
-declare function theModule(input: string, { postfix }: { postfix?: string }): string;
+declare function funkytimeStream(options?: Options): StoppableEmitter
 
-export = theModule;
+export = funkytimeStream

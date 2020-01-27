@@ -1,41 +1,35 @@
-# The module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# Funkytime Stream [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/funkytime-stream/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/funkytime-stream)
 
-My awesome module.
+Stream data updates from [funkytime.tv](https://funkytime.tv).
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/funkytime-stream.png)](https://npmjs.com/package/funkytime-stream)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install funkytime-stream
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const funkytimeStream = require("funkytime-stream");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+funkytimeStream().on("newtopic", ({ title, url }) => console.log(title, url))
+//=> KITi Assistant Release https://funkytime.tv/forums/topic/kiti-assistant-release/
 ```
 
 ## API
 
-### theModule(input, options?)
-
-#### input
-
-Type: `string`
-
-Lorem ipsum.
+### funkytimeStream(options?)
 
 #### options
 
 Type: `object`
 
-##### postfix
+##### interval
 
-Type: `string`\
-Default: `rainbows`
+Type: `number`\
+Default: `5000`
 
-Lorem ipsum.
+Interval in milliseconds before checking for new topics.

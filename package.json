@@ -1,8 +1,8 @@
 {
-	"name": "the-module",
+	"name": "funkytime-stream",
 	"version": "0.0.0",
-	"description": "My awesome module.",
-	"repository": "https://github.com/Richienb/the-module.git",
+	"description": "Stream data updates from funkytime.tv.",
+	"repository": "https://github.com/Richienb/funkytime-stream.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
 	"license": "MIT",
 	"main": "index.js",
@@ -17,8 +17,19 @@
 		"lint": "xo",
 		"test": "yarn lint && ava"
 	},
-	"keywords": [],
-	"dependencies": {},
+	"keywords": [
+		"funkytime",
+		"api",
+		"stream",
+		"events",
+		"emitter",
+		"check"
+	],
+	"dependencies": {
+		"cheerio": "^1.0.0-rc.3",
+		"got": "^10.3.0",
+		"ow": "^0.15.1"
+	},
 	"devDependencies": {
 		"ava": "^3.0.0",
 		"eslint-config-richienb": "^0.3.0",
@@ -28,6 +39,10 @@
 		"eslint": "^6.8.0"
 	},
 	"xo": {
-		"extends": "richienb/node"
+		"extends": "richienb/node",
+		"rules": {
+			"promise/prefer-await-to-then": 0,
+			"promise/always-return": 0
+		}
 	}
 }
